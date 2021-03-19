@@ -16,11 +16,23 @@
 </template>
 
 <script>
+  import { Dialogs } from "@nativescript/core";
+  import { registerUniversalLinkCallback } from "@nativescript-community/universal-links";
+
   export default {
     computed: {
       message() {
         return "Blank {N}-Vue app";
       }
+    },
+
+    created() {
+        registerUniversalLinkCallback((ul) => {
+            console.log(ul);
+            setTimeout(() => {
+                Dialogs.alert("universal link callback executing: " + ul.pathname);
+            }, 200);
+        });
     }
   };
 </script>
