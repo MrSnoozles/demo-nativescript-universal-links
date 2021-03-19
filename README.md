@@ -3,7 +3,7 @@
 This repository is just showcasing a bug in https://github.com/nativescript-community/universal-links version 2.0.2.
 
 **Problem:**
-The `registerUniversalLinkCallback` 
+The `registerUniversalLinkCallback` is not evoked when compiling for release.
 
 
 **Steps to see how it works (in development):**
